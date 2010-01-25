@@ -1,0 +1,36 @@
+NAME
+    Net::DirectConnect::TigerHash - Perl extension for calculating tiger
+    hashes from files or strings
+
+SYNOPSIS
+      use Net::DirectConnect::TigerHash qw(tthbin tth tthfile);
+      print tthbin('somestring'); #24 bytes
+      print tth('somestring'); #base32 encoded, 39 chars
+      print tthfile('/etc/passwd'); #base32 encoded
+      print tthfile('__NOT_eXisted_file___'); #undef
+
+DESCRIPTION
+     ported from linuxdcpp-1.0.3/client
+
+  EXPORT
+    None by default.
+
+  Exportable functions
+     tthbin
+     tth
+     tthfile
+
+SEE ALSO
+     https://launchpad.net/linuxdcpp
+     http://www.open-content.net/specs/draft-jchapweske-thex-02.html
+
+AUTHOR
+    Oleg Alexeenkov, <pro@cpan.org>
+
+COPYRIGHT AND LICENSE
+    Copyright (C) 2009 Oleg Alexeenkov, linuxdcpp authors
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself, either Perl version 5.10.1 or, at
+    your option, any later version of Perl 5 you may have available.
+
