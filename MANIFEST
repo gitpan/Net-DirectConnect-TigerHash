@@ -1,20 +1,20 @@
 Changes
+dcpp/DCPlusPlus.h
+dcpp/Encoder.cpp
+dcpp/Encoder.h
+dcpp/HashValue.h
+dcpp/MerkleTree.h
+dcpp/stdinc.h
+dcpp/TigerHash.cpp
+dcpp/TigerHash.h
+getpagesize.c
 lib/Net/DirectConnect/TigerHash.pm
-linuxdcpp/config.h
-linuxdcpp/CriticalSection.h
-linuxdcpp/DCPlusPlus.h
-linuxdcpp/Encoder.cpp
-linuxdcpp/Encoder.h
-linuxdcpp/Exception.h
-linuxdcpp/FastAlloc.h
-linuxdcpp/HashValue.h
-linuxdcpp/MerkleTree.h
-linuxdcpp/stdinc.h
-linuxdcpp/Thread.h
-linuxdcpp/TigerHash.cpp
-linuxdcpp/TigerHash.h
 Makefile.PL
 MANIFEST			This list of files
+os.h
+patch/DCPlusPlus.h
+patch/HashValue.h
+patch/stdinc.h
 t/TigerHash.t
 TigerHash.xs
 META.yml                                 Module meta-data (added by MakeMaker)

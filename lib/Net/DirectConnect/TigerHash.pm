@@ -1,6 +1,6 @@
-#$Id: TigerHash.pm 550 2010-01-12 22:28:27Z pro $ $URL: svn://svn.setun.net/dcppp/trunk/TigerHash/lib/Net/DirectConnect/TigerHash.pm $
+#$Id: TigerHash.pm 646 2010-11-19 17:35:32Z pro $ $URL: svn://svn.setun.net/dcppp/trunk/TigerHash/lib/Net/DirectConnect/TigerHash.pm $
 package Net::DirectConnect::TigerHash;
-our $VERSION = '0.02';# . '_' . ( split( ' ', '$Revision: 550 $' ) )[1];
+our $VERSION = '0.03';# . '_' . ( split( ' ', '$Revision: 646 $' ) )[1];
 use 5.006001;
 use strict;
 use warnings;
@@ -28,7 +28,7 @@ Net::DirectConnect::TigerHash - Perl extension for calculating tiger hashes from
 
 =head1 DESCRIPTION
 
- ported from linuxdcpp-1.0.3/client
+ ported from eiskaltdc
 
 =head2 EXPORT
 
@@ -42,8 +42,9 @@ None by default.
 
 =head1 SEE ALSO
 
- https://launchpad.net/linuxdcpp
- http://www.open-content.net/specs/draft-jchapweske-thex-02.html  
+ http://code.google.com/p/eiskaltdc/
+
+=head1 BUGS
 
 =head1 AUTHOR
 
@@ -51,7 +52,7 @@ Oleg Alexeenkov, E<lt>pro@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009 Oleg Alexeenkov, linuxdcpp authors
+Copyright (C) 2009-2010 Oleg Alexeenkov, eiskaltdc authors
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.10.1 or,

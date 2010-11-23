@@ -10,7 +10,7 @@ SYNOPSIS
       print tthfile('__NOT_eXisted_file___'); #undef
 
 DESCRIPTION
-     ported from linuxdcpp-1.0.3/client
+     ported from eiskaltdc
 
   EXPORT
     None by default.
@@ -21,14 +21,14 @@ DESCRIPTION
      tthfile
 
 SEE ALSO
-     https://launchpad.net/linuxdcpp
-     http://www.open-content.net/specs/draft-jchapweske-thex-02.html
+     http://code.google.com/p/eiskaltdc/
 
+BUGS
 AUTHOR
     Oleg Alexeenkov, <pro@cpan.org>
 
 COPYRIGHT AND LICENSE
-    Copyright (C) 2009 Oleg Alexeenkov, linuxdcpp authors
+    Copyright (C) 2009-2010 Oleg Alexeenkov, eiskaltdc authors
 
     This library is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself, either Perl version 5.10.1 or, at

@@ -13,14 +13,15 @@ extern "C" {
 }
 #endif
 
-// files from linuxdcpp-1.0.3/client
-// bzr branch lp:linuxdcpp
+#include "os.h"
+#include "getpagesize.c"
+
 #include "stdinc.h"
-#include "config.h"
 #include "DCPlusPlus.h"
 #include "TigerHash.cpp"
 #include "Encoder.cpp"
 #include "MerkleTree.h"
+
 
 MODULE = Net::DirectConnect::TigerHash		PACKAGE = Net::DirectConnect::TigerHash		
 
@@ -32,9 +33,9 @@ tthbin(s)
     CODE:
         STRLEN len;
         char *  ptr = SvPV(s, len);
-        TigerHash th;
+        dcpp::TigerHash th;
         th.update(ptr, len);
-        RETVAL = newSVpv((const char*)(th.finalize()), (STRLEN)TigerHash::HASH_SIZE);
+        RETVAL = newSVpv((const char*)(th.finalize()), (STRLEN)dcpp::TigerHash::BYTES);
     OUTPUT:
         RETVAL
     
@@ -46,10 +47,10 @@ tth(s)
     CODE:
         STRLEN len;
         char *  ptr = SvPV(s, len);
-        TigerHash th;
+        dcpp::TigerHash th;
         th.update(ptr, len);
-	string enc ;
-	Encoder::toBase32(    th.finalize(), TigerHash::HASH_SIZE, enc);
+	std::string enc ;
+	dcpp::Encoder::toBase32(    th.finalize(), dcpp::TigerHash::BYTES, enc);
     RETVAL = newSVpv( enc.data(), enc.length());
     OUTPUT:
 		RETVAL
@@ -62,18 +63,22 @@ tthfile(s)
 	
 	STRLEN len;
 	char *  file = SvPV(s, len);
-	int fd = open(file, O_RDONLY);
+	//int
+	long
+		fd = open(file, O_RDONLY);
 	if(fd <=0 )	{
 		XSRETURN_UNDEF;
 	} 
-	struct stat buffer;
+	STAT buffer;
 	int         status;
+	 //status; 
 	status = fstat(fd, &buffer);
 
 	if (!(S_ISREG(buffer.st_mode) || S_ISLNK(buffer.st_mode))) {
 		close(fd);
 		XSRETURN_UNDEF;
 	}
+
 	int64_t size = buffer.st_size; 
 	int64_t size_left = size;
 	int64_t pos = 0;
@@ -83,9 +88,9 @@ tthfile(s)
 	uint8_t* buf = NULL;
 	buf = new uint8_t[BUF_SIZE];
 	size_t n = 0;
-	int64_t bs = max(TigerTree::calcBlockSize(size, 10), MIN_BLOCK_SIZE);
+	int64_t bs = std::max((unsigned long)dcpp::TigerTree::calcBlockSize(size, 10), (unsigned long)MIN_BLOCK_SIZE);
 
-	TigerTree th(bs);
+	dcpp::TigerTree th(bs);
 
 	do {
 		size_t bufSize = BUF_SIZE;
@@ -97,12 +102,41 @@ tthfile(s)
 	close(fd);
 
 	th.update(buf, 0);
-	string enc ;
-	Encoder::toBase32(    th.finalize(), TigerHash::HASH_SIZE, enc);
+	std::string enc;
+	dcpp::Encoder::toBase32(    th.finalize(), dcpp::TigerHash::BYTES, enc);
 	delete [] buf;
 	RETVAL = newSVpv( enc.data(), enc.length());
 
     OUTPUT:
 		RETVAL  
   
+
+SV * 
+toBase32(s)
+    SV *s
+    PROTOTYPE: $
+    CODE:
+        STRLEN len;
+        char * ptr = SvPV(s, len);
+	std::string enc;
+	dcpp::Encoder::toBase32((const uint8_t*)ptr, len, enc);
+	RETVAL = newSVpv( enc.data(), enc.length());
+    OUTPUT:
+        RETVAL
+
   
+SV * 
+fromBase32(s)
+    SV *s
+    PROTOTYPE: $
+    CODE:
+        STRLEN len;
+        char * ptr = SvPV(s, len);
+	len = len * 5 / 8;
+	uint8_t* dst = new uint8_t [len];
+	dcpp::Encoder::fromBase32(ptr, dst, len);
+	RETVAL = newSVpv((const char*) dst, len);
+    OUTPUT:
+        RETVAL
+
+
