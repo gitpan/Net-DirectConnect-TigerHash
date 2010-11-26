@@ -1,6 +1,6 @@
-#$Id: TigerHash.pm 646 2010-11-19 17:35:32Z pro $ $URL: svn://svn.setun.net/dcppp/trunk/TigerHash/lib/Net/DirectConnect/TigerHash.pm $
+#$Id: TigerHash.pm 665 2010-11-26 23:25:14Z pro $ $URL: svn://svn.setun.net/dcppp/trunk/TigerHash/lib/Net/DirectConnect/TigerHash.pm $
 package Net::DirectConnect::TigerHash;
-our $VERSION = '0.03';# . '_' . ( split( ' ', '$Revision: 646 $' ) )[1];
+our $VERSION = '0.04';# . '_' . ( split( ' ', '$Revision: 665 $' ) )[1];
 use 5.006001;
 use strict;
 use warnings;
