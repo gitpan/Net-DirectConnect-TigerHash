@@ -9,6 +9,10 @@ SYNOPSIS
       print tthfile('/etc/passwd'); #base32 encoded
       print tthfile('__NOT_eXisted_file___'); #undef
 
+
+     cmdline usage:
+      perl -MNet::DirectConnect::TigerHash -e "print map { Net::DirectConnect::TigerHash::tthfile($_) . qq{ $_\n} } @ARGV" your files here
+
 DESCRIPTION
      ported from eiskaltdc
 
