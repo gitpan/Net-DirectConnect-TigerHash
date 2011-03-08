@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Net-DirectConnect-TigerHash
-version:            0.05
+version:            0.06
 abstract:           Perl extension for calculating tiger hashes from files or strings
 author:
     - Charlie & <proler@gmail.com>
