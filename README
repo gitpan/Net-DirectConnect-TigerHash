@@ -28,6 +28,8 @@ SEE ALSO
      http://code.google.com/p/eiskaltdc/
 
 BUGS
+     cant compile with gcc <=3
+
 AUTHOR
     Oleg Alexeenkov, <pro@cpan.org>
 

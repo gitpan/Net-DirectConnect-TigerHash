@@ -1,21 +1,21 @@
---- #YAML:1.0
-name:               Net-DirectConnect-TigerHash
-version:            0.06
-abstract:           Perl extension for calculating tiger hashes from files or strings
+---
+abstract: 'Perl extension for calculating tiger hashes from files or strings'
 author:
-    - Charlie & <proler@gmail.com>
-license:            unknown
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
+  - 'Charlie & <proler@gmail.com>'
 build_requires:
-    ExtUtils::MakeMaker:  0
-requires:  {}
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.55_02
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.120921'
+license: unknown
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Net-DirectConnect-TigerHash
+no_index:
+  directory:
+    - t
+    - inc
+requires: {}
+version: 0.07

@@ -7,6 +7,7 @@ dcpp/MerkleTree.h
 dcpp/stdinc.h
 dcpp/TigerHash.cpp
 dcpp/TigerHash.h
+dcpp/typedefs.h
 getpagesize.c
 lib/Net/DirectConnect/TigerHash.pm
 Makefile.PL
@@ -34,4 +35,5 @@ t/t-0-B37KMLIQJWLWKKD25PHO3ROKMCTALOUJP6U6EXA.tth
 t/t-3YFOLBEU4YZVNMMQ2AS3ORT2CKKT6CSQZXEJ5TQ.tth
 t/TigerHash.t
 TigerHash.xs
-META.yml                                 Module meta-data (added by MakeMaker)
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)

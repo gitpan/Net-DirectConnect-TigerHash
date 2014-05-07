@@ -1,6 +1,6 @@
-#$Id: TigerHash.pm 756 2011-03-08 18:47:54Z pro $ $URL: svn://svn.setun.net/dcppp/trunk/TigerHash/lib/Net/DirectConnect/TigerHash.pm $
+#$Id: TigerHash.pm 806 2011-06-27 20:46:05Z pro $ $URL: svn://svn.setun.net/dcppp/trunk/TigerHash/lib/Net/DirectConnect/TigerHash.pm $
 package Net::DirectConnect::TigerHash;
-our $VERSION = '0.06';# . '_' . ( split( ' ', '$Revision: 756 $' ) )[1];
+our $VERSION = '0.07';# . '_' . ( split( ' ', '$Revision: 806 $' ) )[1];
 use 5.006001;
 use strict;
 use warnings;
@@ -49,6 +49,8 @@ None by default.
  http://code.google.com/p/eiskaltdc/
 
 =head1 BUGS
+
+ cant compile with gcc <=3
 
 =head1 AUTHOR
 
